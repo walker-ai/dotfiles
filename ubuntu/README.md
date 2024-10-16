@@ -23,6 +23,11 @@
 4. 点击“Flash”，Etcher会自动处理并写入ISO镜像。
 5. 完成后，Etcher会提示你写入完成，移除U盘即可。
 
-## 安装一些必备的工具
+## 将启动盘恢复成原来的普通格式的u盘
 
-可在 iso 镜像中的 `ubuntu20.04/pool/main` 中找到
+```shell
+# disk4为u盘挂载目录
+diskutil list
+sudo diskutil umountDisk /dev/disk4
+sudo diskutil eraseDisk ExFAT ud /dev/disk4
+```
