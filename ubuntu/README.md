@@ -77,16 +77,21 @@ sudo mkdir -p /mnt/home-backup
 sudo rsync -aAXv /home/ /mnt/home-backup/
 ```
 
-挂载新硬盘到 `/home`： 临时挂载硬盘到 `/mnt`，以便在挂载前先将数据恢复到新硬盘：
+挂载新硬盘到 `/home`： 临时挂载硬盘到 `/mnt/newdisk`，以便在挂载前先将数据恢复到新硬盘：
 
 ```bash
-sudo mount /dev/nvme0n1p1 /mnt
+sudo mount /dev/nvme0n1p1 /mnt/newdisk
+```
+
+创建 `/mnt/newdisk/home`
+```bash
+sudo mkdir /mnt/newdisk/home
 ```
 
 恢复 `/home` 数据到新硬盘： 将备份的 `/home` 数据从 `/mnt/home-backup` 复制到新硬盘：
 
 ```bash
-sudo rsync -aAXv /mnt/home-backup/ /mnt/
+sudo rsync -aAXv /mnt/home-backup/ /mnt/newdisk/home/
 ```
 
 卸载旧的 `/home` 并挂载新的硬盘：
@@ -97,6 +102,8 @@ sudo rsync -aAXv /mnt/home-backup/ /mnt/
 
 ```bash
 sudo umount /home
+sudo mv /mnt/newdisk/home/orin /mnt/newdisk/
+sudo rm -rf /mnt/newdisk/home
 ```
 
 然后将新硬盘正式挂载到 `/home` 目录：
@@ -123,7 +130,7 @@ sudo blkid /dev/nvme0n1p1
 编辑 `/etc/fstab` 文件：
 
 ```bash
-sudo nano /etc/fstab
+sudo vim /etc/fstab
 ```
 
 在文件末尾添加以下行，确保使用你获得的 `UUID` 替换 `your-uuid`：
