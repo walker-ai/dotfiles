@@ -43,3 +43,19 @@ sudo apt-get update
 ```bash
 sudo apt install cmake
 ```
+
+# 切换不同 cmake 版本
+
+1. 首先，添加 CMake 到 alternatives 系统中：
+
+```bash
+sudo update-alternatives --install /usr/bin/cmake cmake /path/to/cmake-3.26/bin/cmake 100
+sudo update-alternatives --install /usr/bin/cmake cmake /path/to/cmake-3.25/bin/cmake 50
+```
+
+2. 切换 CMake 版本：
+
+```bash
+sudo update-alternatives --config cmake
+```
+
