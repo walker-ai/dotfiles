@@ -1,3 +1,12 @@
+## ubuntu换源
+
+清华源：
+
+x86架构用 https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
+
+arm架构用 https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/
+
+
 ## 制作ubuntu20.04启动盘
 
 在macOS上制作Ubuntu 20.04的启动U盘可以通过以下步骤实现：
