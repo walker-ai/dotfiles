@@ -6,7 +6,7 @@ ssh-keygen -t rsa -C "2398833647@qq.com"
 ### ssh 远程服务器使用本地代理
 
 ```bash
-# local side
+# local side, the former 7890 is remote port, the latter 7890 is local port
 ssh -NfR 7890:localhost:7890 -p 22222 username@localhost
 
 # login
