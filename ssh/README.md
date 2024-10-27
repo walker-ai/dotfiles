@@ -25,4 +25,8 @@ pgrep -fl "ssh -NfR 7890:localhost:7890 orin"
 ```
 
 
+#### 验证是否成功
 
+```bash
+curl -v www.google.com
+```
