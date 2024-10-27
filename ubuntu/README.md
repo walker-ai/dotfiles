@@ -89,6 +89,7 @@ sudo rsync -aAXv /home/ /mnt/home-backup/
 挂载新硬盘到 `/home`： 临时挂载硬盘到 `/mnt/newdisk`，以便在挂载前先将数据恢复到新硬盘：
 
 ```bash
+sudo mkdir -p /mnt/newdisk
 sudo mount /dev/nvme0n1p1 /mnt/newdisk
 ```
 
