@@ -47,7 +47,7 @@ sudo diskutil eraseDisk ExFAT ud /dev/disk4
 
 ### 步骤 1：检查并确认新硬盘
 
-你已经确定硬盘为 `/dev/nvme0n1`，我们将使用这个设备的第一个分区 `/dev/nvme0n1p1` 进行挂载。
+你已经确定硬盘为 `/dev/nvme0n1`，我们将使用这个设备的第一个分区 `/dev/nvme0n1` 进行挂载。
 
 使用以下命令查看分区情况，确认分区已经存在：
 
@@ -73,7 +73,7 @@ sudo fdisk /dev/nvme0n1
 格式化该分区为 `ext4` 文件系统（或者你可以选择其他文件系统，如 `xfs`，根据需要）：
 
 ```bash
-sudo mkfs.ext4 /dev/nvme0n1p1
+sudo mkfs.ext4 /dev/nvme0n1
 ```
 
 ### 步骤 3：挂载新硬盘到 /home
@@ -90,7 +90,7 @@ sudo rsync -aAXv /home/ /mnt/home-backup/
 
 ```bash
 sudo mkdir -p /mnt/newdisk
-sudo mount /dev/nvme0n1p1 /mnt/newdisk
+sudo mount /dev/nvme0n1 /mnt/newdisk
 ```
 
 创建 `/mnt/newdisk/home`
@@ -119,7 +119,7 @@ sudo rm -rf /mnt/newdisk/home
 然后将新硬盘正式挂载到 `/home` 目录：
 
 ```bash
-sudo mount /dev/nvme0n1p1 /home
+sudo mount /dev/nvme0n1 /home
 ```
 
 验证挂载是否成功： 使用 `df -h` 命令确认新的硬盘已经成功挂载到 `/home`：
@@ -134,7 +134,7 @@ df -h
 获取新硬盘分区的 `UUID`：
 
 ```bash
-sudo blkid /dev/nvme0n1p1
+sudo blkid /dev/nvme0n1
 ```
 
 编辑 `/etc/fstab` 文件：
