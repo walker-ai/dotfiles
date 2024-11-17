@@ -1,4 +1,3 @@
-```shell
 ### proxy ###
 alias proxy="
  export http_proxy=http://127.0.0.1:7890;
@@ -223,6 +222,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # <<< oh-my-zsh <<<
-
-
-```
