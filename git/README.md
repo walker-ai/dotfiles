@@ -43,3 +43,7 @@ git branch --set-upstream-to=upstream/<开源分支> main
 ```bash
 git push origin main --force
 ```
+
+### 场景二
+
+需要暂存目前的修改，`git stash`，然后切回来后不小心 `git stash drop`了，这时通过 `git fsck –lost-found` 来找到最近的一些删除的提交，然后 `git stash apply <删除的commit-id>` 即可恢复
