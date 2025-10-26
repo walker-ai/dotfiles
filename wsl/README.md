@@ -79,3 +79,12 @@ ssh root@localhost -p 3333
 
 ```bash
 ssh [username]@[ip] -p 3333
+
+
+### Step6
+
+设置 wsl ssh 服务开机自启
+
+```bash
+sudo systemctl enable ssh
+```
