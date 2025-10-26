@@ -51,6 +51,12 @@ ifconfig
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=3333 connectaddress=[wsl IP address] connectport=3333
 ```
 
+查看所有端口代理规则
+
+```bash
+netsh interface portproxy show all
+```
+
 3. 配置 windows 防火墙
 
 在 PowerShell 中运行：
